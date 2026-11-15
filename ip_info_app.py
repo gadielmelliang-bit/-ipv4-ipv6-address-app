@@ -9,7 +9,7 @@ PURPOSE
     computer's CURRENT PUBLIC IPv4 and IPv6 address plus geolocation, ISP,
     ASN and country code, using public REST APIs (no API key needed).
 
-HOW IT WORKS (read this first if you are continuing the project)
+HOW IT WORKS (read this first if you are continuing the projaect)
     1. get_public_ip()      - asks api4.ipify.org / api6.ipify.org for the
                               IPv4 / IPv6 address. Using separate IPv4-only
                               and IPv6-only hosts is how we reliably get BOTH.
