@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """
 IPv4 / IPv6 Address Application
 ================================
@@ -27,7 +27,7 @@ USAGE
     python ip_info_app.py --ip 8.8.8.8 # look up any address instead
     python ip_info_app.py --json       # raw JSON output (for scripting)
     python ip_info_app.py --no-color   # disable ANSI colours
-
+Edit this
 REQUIREMENTS
     Python 3.8+  and  `pip install requests`
 
