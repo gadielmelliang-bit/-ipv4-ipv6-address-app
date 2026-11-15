@@ -13,7 +13,7 @@ HOW IT WORKS (read this first if you are continuing the project)
     1. get_public_ip()      - asks api4.ipify.org / api6.ipify.org for the
                               IPv4 / IPv6 address. Using separate IPv4-only
                               and IPv6-only hosts is how we reliably get BOTH.
-    2. get_ip_details()     - asks https://ipapi.co/<ip>/json/ for location,
+    2. get_ip_details()     - asks https://ipapi.co/<ip>/json/ for location,a
                               ISP, ASN and country code of that address.
     3. format_report()      - turns the data into an aligned text table.
     4. main()               - ties the steps together and handles CLI options.
