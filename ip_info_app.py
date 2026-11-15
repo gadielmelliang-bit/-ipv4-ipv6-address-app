@@ -9,14 +9,14 @@ PURPOSE
     computer's CURRENT PUBLIC IPv4 and IPv6 address plus geolocation, ISP,
     ASN and country code, using public REST APIs (no API key needed).
 
-HOW IT WORKS (read this first if you are continuing the projaect)
+HOW IT WORKS (read this first if you are continuing the project)
     1. get_public_ip()      - asks api4.ipify.org / api6.ipify.org for the
                               IPv4 / IPv6 address. Using separate IPv4-only
                               and IPv6-only hosts is how we reliably get BOTH.
     2. get_ip_details()     - asks https://ipapi.co/<ip>/json/ for location,
                               ISP, ASN and country code of that address.
     3. format_report()      - turns the data into an aligned text table.
-    4. main()               - ties the steps together and handles CLI options.a
+    4. main()               - ties the steps together and handles CLI options.
 
     All network calls go through fetch_json(), the single place where
     timeouts, rate limits (HTTP 429) and bad JSON are handled. Every function
@@ -73,8 +73,9 @@ def fetch_json(url):
       * responses that are not valid JSON
       * JSON error payloads such as {"error": true, "reason": "..."}
     """
+    headers = {"User-Agent": "ip-info-app/1.0"}
     try:
-        response = requests.get(url, timeout=TIMEOUT_SECONDS)
+        response = requests.get(url, headers=headers, timeout=TIMEOUT_SECONDS)
     except requests.exceptions.Timeout:
         raise ApiError(f"Request timed out after {TIMEOUT_SECONDS}s")
     except requests.exceptions.ConnectionError:
@@ -241,6 +242,3 @@ def main(argv=None):
 
 if __name__ == "__main__":
     sys.exit(main())
-
-def test_main_json_returns_zero(self):
-        assert main(['--json']) == 0
