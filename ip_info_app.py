@@ -16,7 +16,7 @@ HOW IT WORKS (read this first if you are continuing the projaect)
     2. get_ip_details()     - asks https://ipapi.co/<ip>/json/ for location,
                               ISP, ASN and country code of that address.
     3. format_report()      - turns the data into an aligned text table.
-    4. main()               - ties the steps together and handles CLI options.
+    4. main()               - ties the steps together and handles CLI options.a
 
     All network calls go through fetch_json(), the single place where
     timeouts, rate limits (HTTP 429) and bad JSON are handled. Every function
