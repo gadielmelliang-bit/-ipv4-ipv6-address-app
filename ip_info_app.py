@@ -241,3 +241,6 @@ def main(argv=None):
 
 if __name__ == "__main__":
     sys.exit(main())
+
+def test_main_json_returns_zero(self):
+        assert main(['--json']) == 0
